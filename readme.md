@@ -1,74 +1,69 @@
 # phpgrid
 
-This WordPress plugin is copied from Abu Ghufran and improved by Andreas Ek.
-
-We have just started with this plugin development. At a start just showing an example of the php grid control / free version.
+We have just started with this plugin development. At a start just showing an example of the php grid framework - free version.
 
 For more information about the PHP Grid Framework, go to [www.phpgrid.org](www.phpgrid.org)
 
-Please contact our [support forum](http://www.phpgrid.org/support) for support and discussions!
-
-![Shortcode](https://raw.github.com/EkAndreas/phpgrid/master/screenshot-4.jpg)
-
+![Shortcode](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-4.jpg)
 
 ## Installation
 1. Place the code inside the plugin folder as usual installation of WordPress plugins. The folder should be named "phpgrid".
 
-2. Download the free (or your paid) -version of phpgrid.org and place the lib folder under the plugin folder! Due to license rules we do not have the rights to provide you with the component.
+2. Download the free (or your paid) version of phpgrid.org and place the 'lib' folder under the plugin folder! Due to license rules we do not have the rights to provide you with the component.
 
 ## Configuration
-Place a shortcode [phpgrid table="wp_posts"] in your post or page HTML-editor and the grid with posts should be listed in the frontend.
+Place a shortcode [phpgrid id="list1" table="wp_posts"] in your post or page HTML-editor and the grid with posts should be listed in the frontend.
 
 ## Shortcode
 You have to use the attribute 'table' to assign an existing database table. Eg,
 ```text
-[phpgrid table="wp_options"]
+[phpgrid id="list1" table="wp_options"]
 ```
 
 ### Optional shortcode attributes
 Set columns use with the attribute 'columns' as in this example:
 ```text
-[phpgrid table="wp_options" columns="option_name,option_value"]
+[phpgrid id="list1" table="wp_options" columns="option_name,option_value"]
 ```
 
 If you like to set column titles use the attribute 'titles', eg:
 ```text
-[phpgrid table="wp_options" columns="option_name,option_value" titles="Name,Value"]
+[phpgrid id="list1" table="wp_options" columns="option_name,option_value" titles="Name,Value"]
 ```
 
 Set the caption to the grid with the attribute 'caption', eg:
 ```text
-[phpgrid table="wp_options" caption="OPTIONS" columns="option_name,option_value" titles="Name,Value"]
+[phpgrid id="list1" table="wp_options" caption="OPTIONS" columns="option_name,option_value" titles="Name,Value"]
 ```
 
-Enable expoprt to excel via parameter 'export', eg:
+Enable expoprt to excel via parameter 'export', (supported with licensed version of phpgrid.org) eg:
 ```text
-[phpgrid table="wp_options" export="true"]
+[phpgrid id="list1" table="wp_options" export="true"]
 ```
 
 Change localization with the parameter 'language', eg:
 ```text
-[phpgrid table="wp_options" language="sv"]
+[phpgrid id="list1" table="wp_options" language="sv"]
 ```
 The example above will show functions for a swedish grid.
 Supported languages: [Localization](http://www.phpgrid.org/docs/#localization)
 
 
-![Shortcode](https://raw.github.com/EkAndreas/phpgrid/master/screenshot-1.jpg)
+![Shortcode](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-1.jpg)
 
-![phpgrid](https://raw.github.com/EkAndreas/phpgrid/master/screenshot-2.jpg)
+![phpgrid](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-2.jpg)
 
 
 In the next version of this plugin we will provide "orderby" and "where" attributes...
 
 
 ## Contact
-Please feel free to contact me at Twitter [@EkAndreas](https://twitter.com/ekandreas) for further questions and feedback!
+You can contact at [support forum] (http://www.phphgrid.org/support) for further questions and feedback!
 
 ## Advanced usage
 If you want to use the control as integrated with your plugin development, use actions and filters as below.
 
-![filters](https://raw.github.com/EkAndreas/phpgrid/master/screenshot-3.jpg)
+![filters](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-3.jpg)
 
 ### Actions in WordPress
 You could, instead of shortcode, use action to output the grid control, eg:
@@ -432,10 +427,6 @@ function my_phpgrid_connection(){
 The template file contains the following code where the grid should render:
 ```php
 <?php
-	do_action('phpgrid_output');
+	do_action('phpgrid_output','list1');
 ?>
 ```
-
-
-
-Please, join our [fb-page](https://www.facebook.com/pages/Phpgrid-for-WP/486409724756060) for support and discussions!
