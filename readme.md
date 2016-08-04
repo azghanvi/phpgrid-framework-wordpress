@@ -1,4 +1,4 @@
-# phpgrid
+# PHP Grid Framework for Wordpress
 
 We have just started with this plugin development. At a start just showing an example of the php grid framework - free version.
 
@@ -12,7 +12,7 @@ For more information about the PHP Grid Framework, go to [www.phpgrid.org](www.p
 2. Download the free (or your paid) version of phpgrid.org and place the 'lib' folder under the plugin folder! Due to license rules we do not have the rights to provide you with the component.
 
 ## Configuration
-Place a shortcode [phpgrid id="list1" table="wp_posts"] in your post or page HTML-editor and the grid with posts should be listed in the frontend.
+Place a shortcode [phpgrid id="list1" table="wp_posts"] in your post or page HTML-editor and the grid with posts should be listed in the frontend. Here 'list1' is unqiue identifier of grid.
 
 ## Shortcode
 You have to use the attribute 'table' to assign an existing database table. Eg,
@@ -30,6 +30,9 @@ If you like to set column titles use the attribute 'titles', eg:
 ```text
 [phpgrid id="list1" table="wp_options" columns="option_name,option_value" titles="Name,Value"]
 ```
+
+Select with custom SQL with the parameter 'select_command', eg:
+	[phpgrid id="list1" select_command="select * from wp_options WHERE option_name like 's%'"]
 
 Set the caption to the grid with the attribute 'caption', eg:
 ```text
