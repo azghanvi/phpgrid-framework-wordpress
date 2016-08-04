@@ -15,55 +15,60 @@ For more information about the PHP Grid Framework, go to [www.phpgrid.org](www.p
 Place a shortcode [phpgrid id="list1" table="wp_posts"] in your post or page HTML-editor and the grid with posts should be listed in the frontend. Here 'list1' is unqiue identifier of grid.
 
 ## Shortcode
-You have to use the attribute 'table' to assign an existing database table. Eg,
-```text
-[phpgrid id="list1" table="wp_options"]
-```
+
+You have to use the attribute 'table' to assign an existing database table. eg:
+
+    [phpgrid id="list1" table="wp_options"]
 
 ### Optional shortcode attributes
+
 Set columns use with the attribute 'columns' as in this example:
-```text
-[phpgrid id="list1" table="wp_options" columns="option_name,option_value"]
-```
+
+    [phpgrid id="list1" table="wp_options" columns="option_name,option_value"]
 
 If you like to set column titles use the attribute 'titles', eg:
-```text
-[phpgrid id="list1" table="wp_options" columns="option_name,option_value" titles="Name,Value"]
-```
 
-Select with custom SQL with the parameter 'select_command', eg:
-	[phpgrid id="list1" select_command="select * from wp_options WHERE option_name like 's%'"]
+    [phpgrid id="list1" table="wp_options" columns="option_name,option_value" titles="Name,Value"]
 
 Set the caption to the grid with the attribute 'caption', eg:
-```text
-[phpgrid id="list1" table="wp_options" caption="OPTIONS" columns="option_name,option_value" titles="Name,Value"]
-```
 
-Enable expoprt to excel via parameter 'export', (supported with licensed version of phpgrid.org) eg:
-```text
-[phpgrid id="list1" table="wp_options" export="true"]
-```
+    [phpgrid id="list1" table="wp_options" caption="OPTIONS"]
+
+Select with custom SQL with the parameter 'select_command', eg:
+
+    [phpgrid id="list1" table="wp_options" select_command="select * from wp_options WHERE option_name like 's%'"]
+
+To make grid editable, set 'edit','add' or 'delete' to true:
+
+    [phpgrid id="list1" table="wp_posts" edit="true" add="true" delete="true"]
+
+To show multiple grids on a page/post, assign different ids:
+
+    [phpgrid id="list1" table="wp_options" select_command="select * from wp_posts" edit="true"]
+    [phpgrid id="list2" table="wp_posts" edit="true" columns="ID,post_title,post_date,post_author" titles="Id,Title,Date,Author"]
+
+Enable expoprt to excel via parameter 'export', eg:
+
+    [phpgrid id="list1" table="wp_options" export="true"]
 
 Change localization with the parameter 'language', eg:
-```text
-[phpgrid id="list1" table="wp_options" language="sv"]
-```
+    
+	[phpgrid id="list1" table="wp_options" language="sv"]
+
 The example above will show functions for a swedish grid.
 Supported languages: [Localization](http://www.phpgrid.org/docs/#localization)
-
 
 ![Shortcode](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-1.jpg)
 
 ![phpgrid](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-2.jpg)
 
 
-In the next version of this plugin we will provide "orderby" and "where" attributes...
-
+In the next version of this plugin we will provide "orderby" attributes.
 
 ## Contact
 You can contact at [support forum] (http://www.phphgrid.org/support) for further questions and feedback!
 
-## Advanced usage
+## Advanced usage (testing phase)
 If you want to use the control as integrated with your plugin development, use actions and filters as below.
 
 ![filters](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-3.jpg)
