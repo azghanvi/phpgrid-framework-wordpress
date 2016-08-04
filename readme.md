@@ -4,9 +4,9 @@ This WordPress plugin is copied from Abu Ghufran and improved by Andreas Ek.
 
 We have just started with this plugin development. At a start just showing an example of the php grid control / free version.
 
-For more information about the php grid control, go to [www.phpgrid.org](www.phpgrid.org)
+For more information about the PHP Grid Framework, go to [www.phpgrid.org](www.phpgrid.org)
 
-Please, join our [fb-page](https://www.facebook.com/pages/Phpgrid-for-WP/486409724756060) for support and discussions!
+Please contact our [support forum](http://www.phpgrid.org/support) for support and discussions!
 
 ![Shortcode](https://raw.github.com/EkAndreas/phpgrid/master/screenshot-4.jpg)
 
