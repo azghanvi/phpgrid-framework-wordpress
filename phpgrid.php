@@ -4,7 +4,7 @@ Plugin Name: PHP Grid Framework
 Plugin URI: http://www.phpgrid.org/
 Description: PHP Grid Framework to rapidly build CRUD or Report using table name or SQL query - By www.phpgrid.org
 Author: Abu Ghufran
-Version: 0.5.6
+Version: 0.5.7
 Author URI: http://www.phpgrid.org/
 */
 
