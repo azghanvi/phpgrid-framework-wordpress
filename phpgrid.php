@@ -4,7 +4,7 @@ Plugin Name: PHP Grid Framework
 Plugin URI: http://www.phpgrid.org/
 Description: PHP Grid Framework to rapidly build CRUD or Report using table name or SQL query - By www.phpgrid.org
 Author: Abu Ghufran
-Version: 0.5.7
+Version: 0.5.6
 Author URI: http://www.phpgrid.org/
 */
 
@@ -67,22 +67,33 @@ class PHPGrid_Plugin
 			$ajax = true;
 		}
 
-		$grid_columns = array();
-		$grid = array();
-
 		$regex_pattern = get_shortcode_regex();
 		preg_match_all ('/'.$regex_pattern.'/s', $post->post_content, $regex_matches);
 		foreach($regex_matches[2] as $k=>$code)
 		{
 			if ($code == 'phpgrid') 
 			{
-
 				// set database table for CRUD operations, override with filter 'phpgrid_table'.
+
+				$grid = array();
+				$grid_columns = array();
+				
 				$table = '';
 				$select_command = '';
-
-				$g = new jqgrid();
-
+				$column_names = array();
+				$column_titles = array();
+				$list_id = '';
+				$sortname = '';
+				$sortorder = '';
+				$this->add = false;
+				$this->inlineadd = false;
+				$this->edit = false;
+				$this->delete = false;
+				$this->hidden = false;
+				$this->caption = '';
+				$this->export = false;
+				$this->lang = 'en';
+				
 				$db_conf = apply_filters( 'phpgrid_connection', '' );
 
 				if ( is_array( $db_conf ) )
@@ -114,8 +125,6 @@ class PHPGrid_Plugin
 					$attributes[$matches[1][$p]] = $matches[2][$p];
 				}
 				
-				$column_names = array();
-				$column_titles = array();
 				if (isset($attributes['table'])){
 					$table = $attributes['table'];
 				}
@@ -166,6 +175,14 @@ class PHPGrid_Plugin
 
 				if (isset($attributes['id'])){
 					$list_id = $attributes['id'];
+				}
+
+				if (isset($attributes['sortname'])){
+					$sortname = $attributes['sortname'];
+				}
+
+				if (isset($attributes['sortorder'])){
+					$sortorder = $attributes['sortorder'];
 				}
 
 				if ( !empty($column_names) && !is_array( $column_names ) ) {
@@ -249,6 +266,12 @@ class PHPGrid_Plugin
 				$grid["add_options"]["width"] = "500";
 				$grid["edit_options"]["width"] = "500";
 
+				if (!empty($sortname))
+					$grid["sortname"] = $sortname;
+
+				if (!empty($sortorder))
+					$grid["sortorder"] = $sortorder;
+
 				// fetch if filter is used otherwise use standard options
 				$grid = apply_filters( 'phpgrid_options', $grid );
 
@@ -319,8 +342,8 @@ class PHPGrid_Plugin
 	/*
 	* Output the shortcode
 	*/
-	function phpgrid_output()
+	function phpgrid_output($id)
 	{
-		echo $this->phpgrid_output;
+		echo $this->phpgrid_output[$id];
 	}
 }
