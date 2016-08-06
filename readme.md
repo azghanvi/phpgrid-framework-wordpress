@@ -2,7 +2,7 @@
 
 We have just started with this plugin development. At a start just showing an example of the php grid framework - free version.
 
-For more information about the PHP Grid Framework, go to [www.phpgrid.org](http://www.phpgrid.org)
+For more information about the PHP Grid Framework, go to [www.phpgrid.org](www.phpgrid.org)
 
 ![Shortcode](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-4.jpg)
 
@@ -30,6 +30,10 @@ If you like to set column titles use the attribute 'titles', eg:
 
     [phpgrid id="list1" table="wp_options" columns="option_name,option_value" titles="Name,Value"]
 
+Set sort field and order with the attribute 'sortname' and 'sortorder', eg:
+
+    [phpgrid id="list1" table="wp_options" sortname="option_name" sortorder="desc"]
+	
 Set the caption to the grid with the attribute 'caption', eg:
 
     [phpgrid id="list1" table="wp_options" caption="OPTIONS"]
@@ -66,7 +70,7 @@ Supported languages: [Localization](http://www.phpgrid.org/docs/#localization)
 In the next version of this plugin we will provide "orderby" attributes.
 
 ## Contact
-You can contact at [support forum](http://www.phpgrid.org/support) for further questions and feedback!
+You can contact at [support forum] (http://www.phphgrid.org/support) for further questions and feedback!
 
 ## Advanced usage (testing phase)
 If you want to use the control as integrated with your plugin development, use actions and filters as below.
