@@ -66,9 +66,6 @@ Supported languages: [Localization](http://www.phpgrid.org/docs/#localization)
 
 ![phpgrid](https://raw.github.com/gridphp/phpgrid-framework-wordpress/master/screenshot-2.jpg)
 
-
-In the next version of this plugin we will provide "orderby" attributes.
-
 ## Contact
 You can contact at [support forum] (http://www.phphgrid.org/support) for further questions and feedback!
 
