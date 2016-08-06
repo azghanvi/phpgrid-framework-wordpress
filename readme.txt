@@ -39,39 +39,48 @@ Please, read more at GitHub repository: [phpgrid](https://github.com/EkAndreas/p
 
 **Shortcodes**
 
-You have to use the attribute 'table' to assign an existing database table. Eg,
+You have to use the attribute 'table' to assign an existing database table. eg:
 
-`[phpgrid id="list1" table="wp_options"]`
+    [phpgrid id="list1" table="wp_options"]
 
 **Optional shortcode attributes**
 
 Set columns use with the attribute 'columns' as in this example:
-`[phpgrid id="list1" table="wp_options" columns="option_name,option_value"]`
 
-Select with custom SQL with the parameter 'select_command', eg:
-`[phpgrid id="list1" select_command="select * from wp_options WHERE option_name like 's%'"]`
-
-Set select_command to run custom select query:
-[phpgrid id="list1" table="wp_options" select_command="select * from wp_posts" edit="true"]
-
-To make grid editable, set 'edit' to true:
-[phpgrid id="list1" table="wp_posts" edit="true" columns="ID,post_title,post_date,post_author" titles="Id,Title,Date,Author"]
-
-To show multiple grids on a page/post, assign different 'id's:
-[phpgrid id="list1" table="wp_options" select_command="select * from wp_posts" edit="true"]
-[phpgrid id="list2" table="wp_posts" edit="true" columns="ID,post_title,post_date,post_author" titles="Id,Title,Date,Author"]
+    [phpgrid id="list1" table="wp_options" columns="option_name,option_value"]
 
 If you like to set column titles use the attribute 'titles', eg:
-`[phpgrid id="list1" table="wp_options" columns="option_name,option_value" titles="Name,Value"]`
+
+    [phpgrid id="list1" table="wp_options" columns="option_name,option_value" titles="Name,Value"]
+
+Set sort field and order with the attribute 'sortname' and 'sortorder', eg:
+
+    [phpgrid id="list1" table="wp_options" sortname="option_name" sortorder="desc"]
 
 Set the caption to the grid with the attribute 'caption', eg:
-`[phpgrid id="list1" table="wp_options" caption="OPTIONS" columns="option_name,option_value" titles="Name,Value"]`
+
+    [phpgrid id="list1" table="wp_options" caption="OPTIONS"]
+
+Select with custom SQL with the parameter 'select_command', eg:
+
+    [phpgrid id="list1" table="wp_options" select_command="select * from wp_options WHERE option_name like 's%'"]
+
+To make grid editable, set 'edit','add' or 'delete' to true:
+
+    [phpgrid id="list1" table="wp_posts" edit="true" add="true" delete="true"]
+
+To show multiple grids on a page/post, assign different ids:
+
+    [phpgrid id="list1" table="wp_options" select_command="select * from wp_posts" edit="true"]
+    [phpgrid id="list2" table="wp_posts" edit="true" columns="ID,post_title,post_date,post_author" titles="Id,Title,Date,Author"]
 
 Enable expoprt to excel via parameter 'export', eg:
-`[phpgrid id="list1" table="wp_options" export="true"]`
+
+    [phpgrid id="list1" table="wp_options" export="true"]
 
 Change localization with the parameter 'language', eg:
-`[phpgrid id="list1" table="wp_options" language="sv"]`
+    
+	[phpgrid id="list1" table="wp_options" language="sv"]
 
 The example above will show functions for a swedish grid.
 Supported languages: [Localization](http://www.phpgrid.org/docs/#localization)
